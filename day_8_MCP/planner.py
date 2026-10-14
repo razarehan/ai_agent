@@ -21,12 +21,12 @@ def choose_tool(user_input, tools):
     """
     available_tools = generate_tool_description(tools)
 
-    prompt = f"""You are an AI agent, you have given a list of available tools and a user input.
+    prompt = f"""You are an AI planner, you have given a list of available tools and a user input.
     User Input: {user_input}
     Available Tools: {available_tools}
     Based on the user input, choose the most appropriate tool from the list above.
     Please respond with the name of the chosen tool only.
-    If the user input does not match any tool, respond with 'None'.
+    If the user input does not match any tool, respond with None object.
     """
     response = client.chat.completions.create(
         model=model,

@@ -27,6 +27,9 @@ async def execute_tool(client, tool_name, arguments = None):
   """
   Execute a tool on the MCP server if the arguments is none and return the result.
   """
+  if tool_name is None or tool_name.lower() == "none":
+    return None
+  
   arguments = {}
   result = await client.call_tool(tool_name, arguments)
   return result
